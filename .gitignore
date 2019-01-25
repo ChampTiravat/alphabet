@@ -1,6 +1,9 @@
 # NPM packages
 node_modules
 
+# NEXTjs build files
+.next
+
 # VIM relevant
 *.swn
 *.swo
