@@ -98,7 +98,7 @@ const FloatingMenuButton = styled.div`
 
 class AppLayout extends React.PureComponent {
   state = {
-    showSidebar: !false,
+    showSidebar: false,
   }
 
   render() {
