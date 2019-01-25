@@ -1,3 +1,11 @@
+# NPM packages
+node_modules
+
+# VIM relevant
+*.swn
+*.swo
+*.swp
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
