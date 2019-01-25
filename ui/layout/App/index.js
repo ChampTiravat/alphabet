@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const AppLayoutContainer = styled.div`
   margin: 0 auto;
-  padding: 1em;
+  //padding: 1em;
   width: 100%;
   height: auto;
 `;
@@ -35,9 +35,9 @@ const AppLayout = ({ children }) => {
   const isAuthenticated = true;
   return isAuthenticated ? (
     <AppLayoutContainer>
-      <Navbar />
+      <Navbar /> 
       <ContentContainer>
-        <Sidebar />
+        {/* <Sidebar />*/}
         {children}
       </ContentContainer>
     </AppLayoutContainer>
