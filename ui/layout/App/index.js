@@ -29,7 +29,7 @@ const Sidebar = styled.div`
   margin: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #ddd;
   animation-name: ${FadeInEffect};
   animation-duration: 300ms;
 `
