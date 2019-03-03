@@ -1,2 +1,2 @@
 # :zap: Alphabet :zap:
-Alphabet is an experimental full-stack blogging system powered by Go, Redis and PostgreSQL
+Alphabet is a blogging system powered by Go, Redis and PostgreSQL
