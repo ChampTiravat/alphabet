@@ -6,7 +6,7 @@ import Card from "../components/Card"
 import Section from "../components/Section"
 import PageHeader from "../components/PageHeader"
 
-const IndexPage = () => (
+const IndexPage : React.FC = () => (
   <AppLayout>
     <PageHeader>Introduction</PageHeader>
     <Section bg="#999">

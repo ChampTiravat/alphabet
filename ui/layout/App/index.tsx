@@ -1,24 +1,24 @@
-import React, {Fragment} from "react"
-import styled, {keyframes} from "styled-components"
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const AppLayoutContainer = styled.div`
+const AppLayoutContainer = styled("div")`
   margin: 0 auto;
   padding: 0;
   width: 100%;
   height: auto;
-`
+`;
 
 const FadeInEffect = keyframes`
   from { opacity: 0; transform: scale(1.1); };
     to { opacity: 1; transform: scale(1); };
-`
+`;
 
 const MoveInEffect = keyframes`
   from { transform: translateY(-50px); };
     to { transform: translateY(0); };
-`
+`;
 
-const Sidebar = styled.div`
+const Sidebar = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,11 +32,11 @@ const Sidebar = styled.div`
   background-color: #ddd;
   animation-name: ${FadeInEffect};
   animation-duration: 300ms;
-`
+`;
 
-const SidebarMenu = styled.div`
+const SidebarMenu = styled("div")<{ delay: string }>`
   animation-name: ${MoveInEffect};
-  animation-duration: ${(p) => p.delay || "300ms"};
+  animation-duration: ${p => p.delay || "300ms"};
 
   font-size: 1.7em;
   font-weight: 500;
@@ -62,25 +62,25 @@ const SidebarMenu = styled.div`
     color: #333;
     background-color: #fff;
   }
-`
+`;
 
-const Navbar = styled.div`
+const Navbar = styled("div")`
   position: fixed;
   top: 0;
   left: 0;
-  rigth: 0;
+  right: 0;
   margin: 0;
   height: 50px;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-`
+`;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled("div")`
   margin-top: 50px;
-`
+`;
 
-const FloatingMenuButton = styled.div`
+const FloatingMenuButton = styled("div")`
   position: fixed;
   bottom: 50px;
   right: 50px;
@@ -94,40 +94,39 @@ const FloatingMenuButton = styled.div`
   &:hover {
     background-color: #333;
   }
-`
+`;
 
-class AppLayout extends React.PureComponent {
-  state = {
-    showSidebar: false,
-  }
-
-  render() {
-    const {children} = this.props
-    const {showSidebar} = this.state
-
-    const isAuthenticated = true
-
-    return isAuthenticated ? (
-      <Fragment>
-        <AppLayoutContainer>
-          <Navbar />
-          <ContentContainer>
-            {showSidebar && (
-              <Sidebar>
-                <SidebarMenu delay="400ms">Biography</SidebarMenu>
-                <SidebarMenu delay="300ms">Blog and Thoughts</SidebarMenu>
-                <SidebarMenu delay="20ms">Portfolio</SidebarMenu>
-              </Sidebar>
-            )}
-            {children}
-          </ContentContainer>
-        </AppLayoutContainer>
-        <FloatingMenuButton
-          onClick={() => this.setState((ps) => ({showSidebar: !ps.showSidebar}))}
-        />
-      </Fragment>
-    ) : null
-  }
+interface Props {
+  children?: any;
 }
 
-export default AppLayout
+const AppLayout: React.FC<Props> = ({ children }) => {
+  const [showSidebar, setShowSidebar] = React.useState(false);
+
+  const isAuthenticated = true;
+
+  function toggleSidebar() {
+    setShowSidebar(!showSidebar);
+  }
+
+  return isAuthenticated ? (
+    <React.Fragment>
+      <AppLayoutContainer>
+        <Navbar />
+        <ContentContainer>
+          {showSidebar && (
+            <Sidebar>
+              <SidebarMenu delay="400ms">Biography</SidebarMenu>
+              <SidebarMenu delay="300ms">Blog and Thoughts</SidebarMenu>
+              <SidebarMenu delay="20ms">Portfolio</SidebarMenu>
+            </Sidebar>
+          )}
+          {children}
+        </ContentContainer>
+      </AppLayoutContainer>
+      <FloatingMenuButton onClick={toggleSidebar} />
+    </React.Fragment>
+  ) : null;
+};
+
+export default AppLayout;
