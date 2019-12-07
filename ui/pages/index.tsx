@@ -8,15 +8,17 @@ import PageHeader from "../components/PageHeader";
 
 const IndexPage: React.FC = () => (
   <AppLayout>
-    <PageHeader>Introduction</PageHeader>
-    <Section bg="#999">
+    <PageHeader>
+      {/*  */}
+    </PageHeader>
+    {/* <Section bg="#999">
       Biography
       <div>
         <Card />
       </div>
     </Section>
     <Section bg="#888">Blog and Thought</Section>
-    <Section>Portfolio</Section>
+    <Section>Portfolio</Section> */}
   </AppLayout>
 );
 

@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+import Navbar from "../../components/Navbar";
+
 const AppLayoutContainer = styled("div")`
   margin: 0 auto;
   padding: 0;
@@ -64,20 +66,8 @@ const SidebarMenu = styled("div")<{ delay: string }>`
   }
 `;
 
-const Navbar = styled("div")`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  height: 50px;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-`;
-
 const ContentContainer = styled("div")`
-  margin-top: 50px;
+  margin-top: 60px;
 `;
 
 const FloatingMenuButton = styled("div")`
