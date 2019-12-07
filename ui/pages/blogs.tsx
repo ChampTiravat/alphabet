@@ -6,20 +6,20 @@ import Card from "../components/Card";
 import Section from "../components/Section";
 import PageHeader from "../components/PageHeader";
 
-const IndexPage: React.FC = () => (
+const BlogsPage: React.FC = () => (
   <AppLayout>
     <PageHeader>
-      {/*  */}
+      Blogs
     </PageHeader>
-    <Section bg="#999">
+    {/* <Section bg="#999">
       Biography
       <div>
         <Card />
       </div>
     </Section>
     <Section bg="#888">Blog and Thought</Section>
-    <Section>Portfolio</Section>
+    <Section>Portfolio</Section> */}
   </AppLayout>
 );
 
-export default IndexPage;
+export default BlogsPage;

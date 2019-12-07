@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 
 const NAVBAR_HEIGHT: string = "60px";
@@ -108,15 +109,15 @@ const Navbar: React.FC = () => {
         </NavbarPanel>
         <NavbarHeader>
           {/* <AppLogoImage /> */}
-          <a>
+          <Link href="/">
             <AppLogoText>LOGO</AppLogoText>
-          </a>
+          </Link>
         </NavbarHeader>
         <NavbarPanel>
           <NavbarMenu>
-            <a>
+            <Link href={"/blogs"}>
               <NavbaMenuList>Blogs</NavbaMenuList>
-            </a>
+            </Link>
             <a>
               <NavbaMenuList>Contact</NavbaMenuList>
             </a>
